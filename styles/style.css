@@ -1,3 +1,5 @@
+/* общий фон и шрифт страницы */
+
 .page {
   font-family: var(--ff-base);
   background-color: var(--clr-bg);
@@ -6,6 +8,8 @@
   background-position: center;
   background-attachment: fixed;
 }
+
+/* базовый класс для декоративных уголков в хедере и футере */
 
 .decorated-zone {
   position: relative;
@@ -33,13 +37,20 @@
   border-inline-start: 1px solid var(--clr-decor);
 }
 
+/* стили для ссылок внутри текста */
+
 .link-styled {
   text-decoration: none;
   text-shadow: 2px 2px 0 var(--clr-accent);
 }
 
-.link-styled:focus-visible {
+.link-styled:focus {
   outline: none;
+}
+
+.link-styled:focus-visible {
+  outline: 1px solid var(--clr-text);
+  outline-offset: -1px;
 }
 
 /* фон и цвет текста для заголовков карточек и подзаголовка в шапке */
@@ -56,14 +67,11 @@
   font-weight: var(--fw-regular);
 }
 
-/* тут areas чтобы было проще раскидать элементы по сетке */
+/* сетка хедера — без areas, через grid-column */
 
 .header {
   display: grid;
-  grid-template-areas:
-    "nav nav"
-    "heading heading"
-    ". description";
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr auto 1fr;
   align-items: center;
   block-size: 100vh;
@@ -99,8 +107,10 @@
   filter: drop-shadow(0 0 4px var(--clr-accent));
 }
 
+/* меню переключения тем */
+
 .header__theme-menu {
-  grid-area: nav;
+  grid-column: 1 / -1;
   justify-self: end;
 }
 
@@ -125,18 +135,25 @@
   pointer-events: none;
 }
 
+/* главный заголовок на весь экран */
+
 .header__title {
-  grid-area: heading;
+  grid-column: 1 / -1;
   color: var(--clr-heading-main);
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: var(--lh-tight);
   text-shadow: 4px 4px 0 var(--clr-accent);
 }
 
+/* подзаголовок — на мобилке на всю ширину, на планшете уйдёт в правую колонку */
+
 .header__subtitle {
-  grid-area: description;
+  grid-column: 1 / -1;
   align-self: center;
+  padding-inline-end: 42px;
 }
+
+/* основной контент */
 
 .content {
   display: grid;
@@ -168,17 +185,21 @@
   line-height: var(--lh-relaxed);
 }
 
+/* галерея картинок */
+
 .gallery {
   display: grid;
   gap: 10px;
 }
 
 .gallery__image {
-  width: 100%;
-  height: 100%;
+  inline-size: 100%;
+  block-size: 100%;
   object-fit: cover;
   object-position: center;
 }
+
+/* футер — по центру, на весь экран */
 
 .footer {
   position: relative;
@@ -195,6 +216,8 @@
   line-height: var(--lh-tight);
   text-shadow: 2px 2px 0 var(--clr-accent);
 }
+
+/* ===== планшет ===== */
 
 @media (width >= 768px) {
   .decorated-zone::before {
@@ -223,6 +246,12 @@
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
+  /* подзаголовок уходит в правую колонку — текст сам перенесётся как надо */
+
+  .header__subtitle {
+    grid-column: 2 / 3;
+  }
+
   .content {
     gap: 80px;
     margin-block: 60px;
@@ -239,14 +268,18 @@
     grid-row: 1 / -1;
   }
 
-  /* секция с перечислением — всё в одну колонку */
+  /* секция с перечислением — заголовок на треть, карточки на всю ширину */
 
   .section_type_list {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 2fr;
   }
 
   .section_type_list .section__heading {
-    grid-row: auto;
+    grid-row: 1 / 2;
+  }
+
+  .section_type_list .card {
+    grid-column: 1 / -1;
   }
 
   /* раскидываю картинки по сетке как в макете */
@@ -290,20 +323,13 @@
   }
 }
 
+/* ===== десктоп ===== */
+
 @media (width >= 1024px) {
-  /* ховеры только на десктопе, на телефоне они не нужны */
+  /* ховер на ссылках — только на десктопе */
 
   .link-styled:hover {
     border-block-end: 1px solid var(--clr-text);
-  }
-
-  .link-styled:focus {
-    outline: none;
-  }
-
-  .link-styled:focus-visible {
-    outline: 1px solid var(--clr-text);
-    outline-offset: -1px;
   }
 
   .header__theme-menu {
@@ -353,6 +379,10 @@
 
   .section_type_list {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .section_type_list .section__heading {
+    grid-column: 1 / -1;
   }
 
   .section_type_list .card {
