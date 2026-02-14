@@ -1,0 +1,33 @@
+/* принудительное переключение на светлую тему через кнопку */
+:root.theme-light {
+  --bg-image: url("../images/cover-image-light.png");
+  --clr-accent: #ff8dcb;
+  --clr-accent-transparent: #32312d66;
+  --clr-text: #353430;
+  --clr-decor: var(--clr-text);
+  --clr-bg: #fff1f7;
+  --clr-heading-main: #ffc2e6;
+  --clr-heading-section: var(--clr-text);
+  --clr-heading-card: var(--clr-text);
+  --rec-display: hidden;
+}
+
+/* Если у пользователя в системе стоит светлая тема — подхватываем её */
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-image: url("../images/cover-image-light.png");
+    --clr-accent: #ff8dcb;
+    --clr-accent-transparent: #32312d66;
+    --clr-text: #353430;
+    --clr-decor: var(--clr-text);
+    --clr-bg: #fff1f7;
+    --clr-heading-main: #ffc2e6;
+    --clr-heading-section: var(--clr-text);
+    --clr-heading-card: var(--clr-text);
+    --rec-display: hidden;
+  }
+}
+
+
+

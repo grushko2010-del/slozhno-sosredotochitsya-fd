@@ -1,0 +1,14 @@
+/* принудительное переключение на тёмную тему через кнопку */
+:root.theme-dark {
+  --bg-image: url("../images/cover-image-dark.png");
+  --clr-accent: #ff0070;
+  --clr-accent-transparent: #ff007066;
+  --clr-text: #f1b2ce;
+  --clr-decor: var(--clr-accent);
+  --clr-bg: #000028;
+  --clr-heading-main: #db00ff;
+  --clr-heading-section: var(--clr-accent);
+  --clr-heading-card: var(--clr-bg);
+  --rec-display: visible;
+}
+
