@@ -32,7 +32,6 @@
   text-shadow: 4px 4px 0 var(--accent-color);
   color: var(--main-heading-color);
   margin-left: var(--decoration-gap);
-  padding-right: var(--decoration-gap);
 }
 
 .header__subtitle {
@@ -269,12 +268,13 @@
   height: 100vh;
   min-height: var(--min-height);
   position: relative;
-  display: grid;
-  place-items: center;
-  padding: var(--decoration-gap);
 }
 
 .footer__title {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 0.825;
   text-shadow: 4px 4px 0 var(--accent-color);
