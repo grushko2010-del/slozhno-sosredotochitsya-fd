@@ -10,7 +10,6 @@
   background-image: var(--bg-image);
   background-size: cover;
   background-position: center;
-  overflow-x: hidden;
 }
 
 /* ===== шапка ===== */
