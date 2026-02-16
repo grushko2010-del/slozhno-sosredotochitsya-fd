@@ -1,22 +1,22 @@
 :root {
   --bg-image: url("../images/cover-image-dark.png");
-  --clr-accent: #ff0070;
-  --clr-accent-transparent: #ff007066;
-  --clr-text: #f1b2ce;
-  --clr-decor: var(--clr-accent);
-  --clr-bg: #000028;
-  --clr-heading-main: #db00ff;
-  --clr-heading-section: var(--clr-accent);
-  --clr-heading-card: var(--clr-bg);
+  --accent-color: #ff0070;
+  --accent-color-transparent: #ff007066;
+  --text-color: #f1b2ce;
+  --decor-color: var(--accent-color);
+  --page-background-color: #000028;
+  --main-heading-color: #db00ff;
+  --section-heading-color: var(--accent-color);
+  --card-heading-color: var(--page-background-color);
   --rec-display: visible;
 
-  --ff-base: "IBM Plex Mono", "Arial", sans-serif;
-  --fs-base: 18px;
-  --lh-tight: 83%;
-  --lh-normal: 100%;
-  --lh-relaxed: 130%;
-  --fw-bold: 700;
-  --fw-regular: 400;
+  --base-font-family: "IBM Plex Mono", "Arial", sans-serif;
+  --base-font-size: 18px;
+  --tight-line-height: 83%;
+  --normal-line-height: 100%;
+  --relaxed-line-height: 130%;
+  --bold-font-weight: 700;
+  --regular-font-weight: 400;
   --decoration-gap: clamp(10px, 2.65vw, 20px);
   --corner-thickness: 1px;
   --min-height: 668px;
