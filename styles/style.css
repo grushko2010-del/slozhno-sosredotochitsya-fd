@@ -10,6 +10,7 @@
   background-image: var(--bg-image);
   background-size: cover;
   background-position: center;
+  overflow-x: hidden;
 }
 
 /* ===== шапка ===== */
@@ -32,6 +33,7 @@
   text-shadow: 4px 4px 0 var(--accent-color);
   color: var(--main-heading-color);
   margin-left: var(--decoration-gap);
+  padding-right: var(--decoration-gap);
 }
 
 .header__subtitle {
@@ -279,6 +281,7 @@
   line-height: 0.825;
   text-shadow: 4px 4px 0 var(--accent-color);
   color: var(--main-heading-color);
+  padding: 0 var(--decoration-gap);
 }
 
 /* ===== планшет ===== */
@@ -288,6 +291,7 @@
   .header__title {
     font-size: clamp(7.5rem, 0.563rem + 14.453vw, 9.8125rem);
     margin-left: 0;
+    padding-right: 0;
   }
 
   .header {
