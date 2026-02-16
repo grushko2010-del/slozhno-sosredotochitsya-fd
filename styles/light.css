@@ -1,4 +1,5 @@
 /* принудительное переключение на светлую тему через кнопку */
+
 :root.theme-light {
   --bg-image: url("../images/cover-image-light.png");
   --clr-accent: #ff8dcb;
@@ -28,6 +29,15 @@
     --rec-display: hidden;
   }
 }
+
+.theme-light .header__rec-indicator::before {
+  display: none;
+}
+
+.theme-light .header__rec-indicator::after {
+  display: none;
+}
+
 
 
 

@@ -10,12 +10,16 @@
   --clr-heading-card: var(--clr-bg);
   --rec-display: visible;
 
-  --ff-base: "IBM Plex mono", monospace;
+  --ff-base: "IBM Plex Mono", "Arial", sans-serif;
   --fs-base: 18px;
   --lh-tight: 83%;
   --lh-normal: 100%;
   --lh-relaxed: 130%;
   --fw-bold: 700;
   --fw-regular: 400;
+  --decoration-gap: clamp(10px, 2.65vw, 20px);
+  --corner-thickness: 1px;
+  --min-height: 668px;
 }
+
 
